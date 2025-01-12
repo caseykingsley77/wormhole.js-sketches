@@ -50,7 +50,7 @@ const tubeGeo = new THREE.TubeGeometry(spline, 222, 0.65, 16, true);
 
 //create edges geometry from the spline
 const edges =  new THREE.EdgesGeometry(tubeGeo, 0.2);
-const lineMat = new THREE.LineBasicMaterial({ color: 0xffffff });
+const lineMat = new THREE.LineBasicMaterial({ color: 0xff0000 });
 const tubeLines = new THREE.LineSegments(edges, lineMat);
 scene.add(tubeLines);
 
@@ -87,7 +87,7 @@ for (let i = 0; i <  numBoxes; i += 1) {
 
 function updateCamera(t) {
     const time = t * 0.1;
-    const looptime = 8 * 1000;
+    const looptime = 4 * 1000;
     const p = (time % looptime) / looptime;
     const pos = tubeGeo.parameters.path.getPointAt(p);
     const lookAt = tubeGeo.parameters.path.getPointAt((p + 0.03) % 1);
